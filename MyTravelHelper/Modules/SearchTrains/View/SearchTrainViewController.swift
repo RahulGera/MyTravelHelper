@@ -44,13 +44,21 @@ class SearchTrainViewController: UIViewController {
     }
     
     @IBAction func addBookmarkTapped(_ sender: UIButton) {
-        favouriteStations.sourceStation =  transitPoints.source
-        favouriteStations.destinationStation =  transitPoints.destination
+        if  sourceTxtField.text != transitPoints.source ||
+            destinationTextField.text != transitPoints.destination {
+            showAlert(title: "Warning", message: "Please select the station from drop down", actionTitle: "Okay")
+        }
+        else {
+            favouriteStations.sourceStation =  transitPoints.source
+            favouriteStations.destinationStation =  transitPoints.destination
+        }
     }
     
     func fetchFavouriteStations()  {
         sourceTxtField.text = favouriteStations.sourceStation
         destinationTextField.text = favouriteStations.destinationStation
+        transitPoints.source = favouriteStations.sourceStation ?? ""
+        transitPoints.destination = favouriteStations.destinationStation ?? ""
     }
     
 }

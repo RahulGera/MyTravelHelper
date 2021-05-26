@@ -60,7 +60,6 @@
                                         <state key="normal" title="Add Bookmark"/>
                                         <connections>
                                             <action selector="addBookmarkTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="lEg-97-2OM"/>
-                                            <action selector="searchTrainsTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="1DV-gV-2gs"/>
                                         </connections>
                                     </button>
                                 </subviews>
